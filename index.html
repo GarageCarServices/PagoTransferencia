@@ -1,0 +1,84 @@
+.card {
+  max-width: 520px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.dato {
+  margin-bottom: 18px;
+}
+
+.label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.valor {
+  font-size: 18px;
+  word-break: break-word;
+}
+
+button {
+  margin-top: 8px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.nota {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.copiado {
+  margin-top: 14px;
+  color: green;
+  font-size: 14px;
+  display: none;
+}
+<div class="dato">
+  <span class="label">Titular:</span>
+  <span class="valor" id="titular">OSCAR ANDINO</span><br>
+  <button onclick="copiar('titular')">Copiar titular</button>
+</div>
+
+<div class="dato">
+  <span class="label">Banco:</span>
+  <span class="valor" id="banco">Banco Agrícola</span><br>
+  <button onclick="copiar('banco')">Copiar banco</button>
+</div>
+
+<div class="dato">
+  <span class="label">Cuenta de ahorro:</span>
+  <span class="valor" id="cuenta">5791713953</span><br>
+  <button onclick="copiar('cuenta')">Copiar cuenta</button>
+</div>
+
+<button onclick="copiarTodo()">Copiar todos los datos</button>
+
+<div class="copiado" id="mensaje">Copiado al portapapeles</div>
+
+<div class="nota">
+  Por favor, envía tu comprobante por medio de WhatsApp.<br><br>
+  Muchas gracias por tu compra.
+</div>
