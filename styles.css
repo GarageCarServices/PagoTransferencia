@@ -1,0 +1,424 @@
+:root {
+  --bg-deep: #0d4100;
+  --bg-mid: #1f6508;
+  --panel: rgba(214, 228, 200, 0.86);
+  --panel-strong: #d7cf17;
+  --text-light: #f7fbf3;
+  --text-dark: #183100;
+  --card-green: #3f6f11;
+  --card-green-strong: #2d5508;
+  --line: rgba(255, 255, 255, 0.45);
+  --shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --max-width: 1120px;
+  --font-base: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-base);
+  color: var(--text-light);
+  background:
+    radial-gradient(circle at top left, rgba(86, 140, 28, 0.32), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(183, 204, 28, 0.2), transparent 28%),
+    linear-gradient(135deg, #0b3a00 0%, #1c6206 52%, #0d4202 100%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(var(--max-width), calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+.site-header {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+  padding: 8px 0 18px;
+}
+
+.brand {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.brand-logo {
+  width: 82px;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.25));
+}
+
+.brand-copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.brand-copy p {
+  margin: 8px 0 0;
+  padding-top: 8px;
+  font-size: clamp(1.15rem, 3vw, 2.2rem);
+  color: rgba(255, 255, 255, 0.88);
+  border-top: 2px solid var(--line);
+}
+
+.hero-card,
+.account-card {
+  background: var(--panel);
+  color: var(--text-dark);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.instruction-banner {
+  padding: 16px 18px;
+  background: var(--panel-strong);
+  color: #264e05;
+  font-weight: 800;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+}
+
+.hero-body,
+.account-body {
+  padding: 22px;
+}
+
+.bank-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.bank-card {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(39, 75, 8, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.bank-card:hover,
+.bank-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(24, 49, 0, 0.16);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.bank-card img {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  margin: 0 auto 14px;
+  border-radius: 22px;
+}
+
+.bank-card h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.bank-card p {
+  margin: 10px 0 0;
+  color: rgba(24, 49, 0, 0.84);
+  font-size: 0.98rem;
+}
+
+.page-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 10px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--line);
+}
+
+.page-intro h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4.4vw, 3rem);
+  line-height: 1.05;
+}
+
+.bank-badge {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 10px;
+  object-fit: contain;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+.account-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.copy-button {
+  width: 100%;
+  border: 0;
+  border-radius: 18px;
+  background: var(--card-green);
+  color: var(--text-light);
+  box-shadow: 0 10px 22px rgba(39, 75, 8, 0.2);
+  padding: 14px 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.copy-button:hover,
+.copy-button:focus-visible {
+  transform: translateY(-1px);
+  background: var(--card-green-strong);
+}
+
+.copy-button.copied {
+  background: #5c870a;
+}
+
+.copy-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.copy-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: space-between;
+}
+
+.copy-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.copy-state {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.copy-button.copied .copy-state {
+  background: rgba(231, 247, 188, 0.28);
+}
+
+.utility-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.home-link,
+.bank-switcher a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 700;
+}
+
+.bank-switcher {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.site-footer {
+  padding: 30px 0 10px;
+  text-align: center;
+}
+
+.site-footer h3 {
+  margin: 0 0 6px;
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  line-height: 1.05;
+}
+
+.site-footer p {
+  margin: 0 0 18px;
+  font-size: clamp(1rem, 2.6vw, 1.6rem);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.social-links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: min(100%, 480px);
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: #d7df00;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: rgba(52, 98, 8, 0.15);
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(52, 98, 8, 0.28);
+}
+
+.social-links img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%) translateY(18px);
+  width: min(calc(100% - 32px), 380px);
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(24, 49, 0, 0.92);
+  color: var(--text-light);
+  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 20;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 720px) {
+  .site-header {
+    padding-top: 18px;
+  }
+
+  .bank-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .account-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 719px) {
+  .page-shell {
+    width: min(var(--max-width), calc(100% - 22px));
+    padding-top: 18px;
+  }
+
+  .brand {
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 64px;
+  }
+
+  .hero-body,
+  .account-body {
+    padding: 16px;
+  }
+
+  .instruction-banner {
+    padding: 14px 16px;
+  }
+
+  .page-intro {
+    align-items: flex-start;
+  }
+
+  .bank-badge {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+  }
+
+  .utility-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bank-switcher {
+    justify-content: center;
+  }
+
+  .social-links {
+    border-radius: 28px;
+  }
+
+  .social-links a {
+    width: 52px;
+    height: 52px;
+  }
+
+  .copy-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
