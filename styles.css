@@ -207,6 +207,29 @@ button {
   background: #5c870a;
 }
 
+.copy-button.copy-primary {
+  background: linear-gradient(135deg, #d7cf17 0%, #f1df58 100%);
+  color: #223f00;
+}
+
+.copy-button.copy-primary:hover,
+.copy-button.copy-primary:focus-visible {
+  background: linear-gradient(135deg, #c6bf15 0%, #e2cf48 100%);
+}
+
+.copy-button.copy-primary .copy-label {
+  color: rgba(34, 63, 0, 0.82);
+}
+
+.copy-button.copy-primary .copy-state {
+  background: rgba(34, 63, 0, 0.12);
+  color: #223f00;
+}
+
+.copy-button.copy-primary.copied {
+  background: linear-gradient(135deg, #bbd63c 0%, #dce772 100%);
+}
+
 .copy-label {
   display: block;
   margin-bottom: 6px;
